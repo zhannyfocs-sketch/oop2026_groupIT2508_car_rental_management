@@ -1,41 +1,58 @@
 package Entities;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 public class Payment {
     private int id;
-    private static int idGen;
     private int rentalId;
-    private double amount;
+    private BigDecimal amount;
+    private LocalDateTime paymentdate;
 
-    public Payment( int rentalId, double amount) {
-        id = idGen;
-        idGen++;
+    public Payment(){}
+
+    public Payment(int rentalId, BigDecimal amount, LocalDateTime paymentdate) {
+        setRentalId(rentalId);
+        setAmount(amount);
+        setPaymentdate(paymentdate);
     }
+    public Payment(int id, int rentalId, BigDecimal amount, LocalDateTime paymentdate) {
+        this(rentalId, amount, paymentdate);
+        setId(id);
+    }
+
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-     public int getRentalId() {
+
+    public int getRentalId() {
         return rentalId;
-     }
-     public void setRentalId(int rentalId) {
-        if (rentalId < 0 ) {
-            throw new IllegalArgumentException("rentalId cannot be negative");
-        }
+    }
+    public void setRentalId(int rentalId) {
         this.rentalId = rentalId;
-     }
-     public double getAmount() {
+    }
+
+    public BigDecimal getAmount() {
         return amount;
-     }
-     public void setAmount(double amount) {
-        if (amount < 0) {
-            throw new IllegalArgumentException("amount cannot be negative");
-        }
+    }
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
-     }
+    }
 
+    public LocalDateTime getPaymentdate() {
+        return paymentdate;
+    }
+    public void setPaymentdate(LocalDateTime paymentdate) {
+        this.paymentdate = paymentdate;
+    }
 
-
+    @Override
+    public String toString() {
+        return "Payment{" + "id=" + id + ", rentalId=" + rentalId
+                + ", amount=" + amount + ", paymentdate=" + paymentdate + '}';
+    }
 
 }

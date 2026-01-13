@@ -1,44 +1,65 @@
 package Entities;
 
-public class Car {
-   private int id;
-   private static int idGen;
-   private String make;
-   private String model;
-   private boolean isAvialable;
+import java.math.BigDecimal;
 
-   public Car(String make, String model, boolean isAvialable) {
-        id = idGen;
-        idGen++;
+public class Car {
+    private int id;
+    private String make;
+    private String model;
+    private BigDecimal rate;
+    private boolean available;
+
+    public Car() {}
+
+    public Car(String make, String model, BigDecimal rate, boolean available) {
+        setMake(make);
+        setModel(model);
+        setRate(rate);
+        setAvailable(available);
+    }
+    public Car(int id, String make, String model, BigDecimal rate, boolean available) {
+        this(make, model, rate, available);
+        setId(id);
     }
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
-       this.id = id;
+        this.id = id;
     }
+
     public String getMake() {
-       return make;
+        return make;
     }
     public void setMake(String make) {
-       if (make == null || make.isEmpty()) {
-           throw new IllegalArgumentException("Make cannot be empty");
-       }
-       this.make = make;
+        this.make = make;
     }
+
     public String getModel() {
-       return model;
+        return model;
     }
     public void setModel(String model) {
-       if (model == null || model.isEmpty()) {
-           throw new IllegalArgumentException("Model cannot be empty");
-       }
-       this.model = model;
+        this.model = model;
     }
-    public boolean isAvialable() {
-       return isAvialable;
+
+    public BigDecimal getRate() {
+        return rate;
     }
-    public void setAvialable(boolean isAvialable) {
-       this.isAvialable = isAvialable;
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
     }
+
+    public boolean isAvailable() {
+        return available;
     }
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" + "id=" + id + ", make=" + make
+                + ", model=" + model + ", rate=" + rate + ", available=" + available + '}';
+    }
+}
