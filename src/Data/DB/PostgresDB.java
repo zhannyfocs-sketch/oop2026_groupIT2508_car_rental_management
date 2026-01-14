@@ -15,15 +15,15 @@ public class PostgresDB {
     private static final String PASSWORD = loadPassword();
     private static String loadPassword() {
         Properties props = new Properties();
-        try (InputStream input = new FileInputStream("config.properties")) {
+        try (InputStream input = new FileInputStream("configproperties")) {
             props.load(input);
             String value = props.getProperty("DB_PASSWORD");
             if (value == null || value.isBlank()) {
-                throw new RuntimeException("DB_PASSWORD is not set in config.properties");
+                throw new RuntimeException("DB_PASSWORD is not set in configproperties");
             }
             return value;
         } catch (IOException e) {
-            throw new RuntimeException("Cannot load DB_PASSWORD from config.properties", e);
+            throw new RuntimeException("Cannot load DB_PASSWORD from configproperties", e);
         }
     }
     private PostgresDB(){
