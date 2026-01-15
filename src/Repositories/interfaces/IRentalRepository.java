@@ -1,4 +1,4 @@
-package interfaces;
+package Repositories.interfaces;
 
 import models.Rental;
 import java.sql.SQLException;
