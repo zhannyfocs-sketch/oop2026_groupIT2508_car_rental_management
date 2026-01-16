@@ -1,5 +1,6 @@
-# Sensitive files
-configproperties
+# Configuration files with secrets
+config.properties
+*.properties
 
 ### IntelliJ IDEA ###
 out/

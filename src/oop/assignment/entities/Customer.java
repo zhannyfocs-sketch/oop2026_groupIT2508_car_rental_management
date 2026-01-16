@@ -1,4 +1,4 @@
-package models;
+package oop.assignment.entities;
 
 import java.time.LocalDate;
 import java.time.Period;

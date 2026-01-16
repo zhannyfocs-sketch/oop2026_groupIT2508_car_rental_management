@@ -1,4 +1,4 @@
-package exceptions;
+package oop.assignment.exceptions;
 
 public class CarNotAvailableException extends Exception {
     private final int carId;

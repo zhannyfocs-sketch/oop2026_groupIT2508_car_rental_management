@@ -1,6 +1,6 @@
-package Repositories.interfaces;
+package oop.assignment.repositories.interfaces;
 
-import models.Rental;
+import oop.assignment.entities.Rental;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;

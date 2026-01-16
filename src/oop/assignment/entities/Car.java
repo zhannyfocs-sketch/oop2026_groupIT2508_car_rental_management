@@ -1,4 +1,4 @@
-package models;
+package oop.assignment.entities;
 
 import java.math.BigDecimal;
 
