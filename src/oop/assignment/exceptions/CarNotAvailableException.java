@@ -8,6 +8,11 @@ public class CarNotAvailableException extends Exception {
         this.carId = id;
     }
 
+    public CarNotAvailableException(int id, String message) {
+        super(message);
+        this.carId = id;
+    }
+
     public int getCarId() {
         return carId;
     }

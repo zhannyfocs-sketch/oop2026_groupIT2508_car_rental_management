@@ -7,11 +7,11 @@ public class RentalOverlapException extends Exception {
     private final LocalDate start;
     private final LocalDate  end;
 
-    public RentalOverlapException(int carId, LocalDate startdate, LocalDate enddate) {
-        super("Car ID " + carId + " is unavailable for the period: " + startdate + " to " + enddate);
+    public RentalOverlapException(int carId, LocalDate startDate, LocalDate endDate) {
+        super("Car ID " + carId + " is unavailable for the period: " + startDate + " to " + endDate);
         this.carId = carId;
-        this.start = startdate;
-        this.end = enddate;
+        this.start = startDate;
+        this.end = endDate;
     }
 
     public int getCarId() { return carId; }

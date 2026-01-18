@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface IRentalRepository {
     void add(Rental rental) throws SQLException;
-    List<Rental> getRentals() throws SQLException;
-    List<Rental> getRentals(LocalDate startDate, LocalDate endDate) throws SQLException;
+    Rental findById(int id) throws SQLException;
+    List<Rental> getAll() throws SQLException;
+    List<Rental> findByCarId(int carId) throws SQLException;
+    List<Rental> findByCustomerId(int customerId) throws SQLException;
+    boolean hasOverlappingRental(int carId, LocalDate startDate, LocalDate endDate) throws SQLException;
 }
