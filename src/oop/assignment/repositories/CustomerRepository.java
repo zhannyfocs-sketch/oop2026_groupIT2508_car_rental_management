@@ -4,7 +4,6 @@ import oop.assignment.db.IDB;
 import oop.assignment.entities.Customer;
 import oop.assignment.repositories.interfaces.ICustomerRepository;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
